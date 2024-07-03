@@ -2,7 +2,6 @@
 title: "Telling Stories with Data - Study"
 format: html
 editor: visual
-include: false
 ---
 
 ## Reproducible workflows
@@ -95,6 +94,7 @@ To set up a new project, here are the following steps:
 4.  Use a Personal Access Token (PAT) to link our RStudio Workspace with Github
 
     ```{r}
+    #| eval: false
     install.packages("usethis")
 
     # set your user name and email
@@ -110,6 +110,7 @@ To set up a new project, here are the following steps:
 5.  Replace Note with "PAT for Rstudio" and generate token
 
     ```{r}
+    #| eval: false
     credentials::set_github_pat("YourPAT")
     ```
 
