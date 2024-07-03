@@ -7,7 +7,74 @@ include: false
 
 ## Reproducible workflows
 
-### Github
+## Quarto
+
+### Top matter
+
+```         
+---
+title: "My document"
+author: "Your Name"
+date: format(Sys.time(), "%d %B %Y")
+abstract: "This is my abstract."
+format: html
+---
+```
+
+### Essential Commands
+
+-   Emphasis: `*italic*`, `**bold**`
+
+-   Headers (these go on their own line with a blank line before and after):
+
+```         
+         # First level header
+         
+         ## Second level header
+         
+         ### Third level header
+```
+
+-   Unordered list, with sub-lists:
+
+```         
+    * Item 1
+    * Item 2
+        + Item 2a
+        + Item 2b
+```
+
+-   Ordered list, with sub-lists:
+
+```         
+    1. Item 1
+    2. Item 2
+    3. Item 3
+        + Item 3a
+        + Item 3b
+```
+
+-   URLs can be added: `[this book](https://www.tellingstorieswithdata.com)` results in [this book](https://www.tellingstorieswithdata.com/).
+
+-   A paragraph is created by leaving a blank line.
+
+    ### Evaluation Options in R chunks
+
+-   `echo`: This controls whether the code itself is included in the document. For instance, `#| echo: false` would mean the code will be run and its output will show, but the code itself would not be included in the document.
+
+-   `include`: This controls whether the output of the code is included in the document. For instance, `#| include: false` would run the code, but would not result in any output, and the code itself would not be included in the document.
+
+-   `eval`: This controls whether the code should be included in the document. For instance, `#| eval: false` would mean that the code is not run, and hence there would not be any output to include, but the code itself would be included in the document.
+
+-   `warning`: This controls whether warnings should be included in the document. For instance, `#| warning: false` would mean that warnings are not included.
+
+-   `message`: This controls whether messages should be included in the document. For instance, `#| message: false` would mean that messages are not included in the document.
+
+## R Projects
+
+Used so that files exist in relation to the base of the R project, not the base of the computer. The main advantage of using R Project is with file referencing. For instance, instead of reading a CSV from, say, `"~/Documents/projects/book/data/"` you can read it from `book/data/`.
+
+## Github
 
 To set up a new project, here are the following steps:
 
@@ -47,20 +114,3 @@ To set up a new project, here are the following steps:
     ```
 
 6.  Maintain using pull, commit, and push
-
-## Running Code
-
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
-
-```{r}
-1 + 1
-```
-
-You can add options to executable code like this
-
-```{r}
-#| echo: false
-2 * 2
-```
-
-The `echo: false` option disables the printing of code (only output is displayed).
